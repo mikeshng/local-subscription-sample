@@ -1,0 +1,8 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: local-sub-channel
+  namespace: local-sub-ch
+spec:
+  type: GitHub
+  pathname: https://github.com/mikeshng/local-subscription-sample.git

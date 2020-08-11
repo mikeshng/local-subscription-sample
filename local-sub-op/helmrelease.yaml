@@ -1,0 +1,21 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: HelmRelease
+metadata:
+  name: nginx-ingress
+  labels:
+    a:
+repo:
+  chartName: nginx-ingress
+  configMapRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: skip-cert-verify
+  source:
+    helmRepo:
+      urls:
+      - https://kubernetes-charts.storage.googleapis.com/nginx-ingress-1.36.3.tgz
+    type: helmrepo
+spec:
+  defaultBackend:
+    replicaCount: 2
+
